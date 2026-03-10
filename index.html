@@ -1,73 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MedSchedule — Daily Lecture Timeline</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MedSchedule — Daily Lecture Timeline</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ── TOP HEADER ── -->
+    <header class="header">
+      <div class="header-left">
+        <span class="logo">Lec<span class="logo-accent">KN</span></span>
+        <span class="header-subtitle">Daily Lecture Schedule</span>
+      </div>
+      <div class="header-center">
+        <div id="clock" class="clock">00:00</div>
+        <div id="dateDisplay" class="date-display">Loading…</div>
+      </div>
+      <div class="header-right">
+        <div class="pulse-dot"></div>
+        <span class="live-label">LIVE</span>
+      </div>
+    </header>
 
-  <!-- ── TOP HEADER ── -->
-  <header class="header">
-    <div class="header-left">
-      <span class="logo">MED<span class="logo-accent">RX</span></span>
-      <span class="header-subtitle">Daily Lecture Schedule</span>
-    </div>
-    <div class="header-center">
-      <div id="clock" class="clock">00:00</div>
-      <div id="dateDisplay" class="date-display">Loading…</div>
-    </div>
-    <div class="header-right">
-      <div class="pulse-dot"></div>
-      <span class="live-label">LIVE</span>
-    </div>
-  </header>
+    <!-- ── TIMELINE SECTION ── -->
+    <main class="timeline-section">
+      <div class="timeline-label">TODAY'S SCHEDULE</div>
 
-  <!-- ── TIMELINE SECTION ── -->
-  <main class="timeline-section">
-    <div class="timeline-label">TODAY'S SCHEDULE</div>
+      <!-- Scrollable track -->
+      <div id="timelineContainer" class="timeline-container">
+        <div id="timelineTrack" class="timeline-track">
+          <!-- Hour markers injected by JS -->
+          <div id="hourMarkers" class="hour-markers"></div>
 
-    <!-- Scrollable track -->
-    <div id="timelineContainer" class="timeline-container">
-      <div id="timelineTrack" class="timeline-track">
+          <!-- Horizontal axis line -->
+          <div class="axis-line"></div>
 
-        <!-- Hour markers injected by JS -->
-        <div id="hourMarkers" class="hour-markers"></div>
+          <!-- Lecture blocks injected by JS -->
+          <div id="lectureBlocks" class="lecture-blocks"></div>
 
-        <!-- Horizontal axis line -->
-        <div class="axis-line"></div>
-
-        <!-- Lecture blocks injected by JS -->
-        <div id="lectureBlocks" class="lecture-blocks"></div>
-
-        <!-- Current time marker -->
-        <div id="timeMarker" class="time-marker">
-          <div class="marker-head"></div>
-          <div class="marker-line"></div>
+          <!-- Current time marker -->
+          <div id="timeMarker" class="time-marker">
+            <div class="marker-head"></div>
+            <div class="marker-line"></div>
+          </div>
         </div>
-
       </div>
-    </div>
-  </main>
+    </main>
 
-  <!-- ── NEXT LECTURE BOX ── -->
-  <footer class="footer">
-    <div id="nextLectureBox" class="next-lecture-box">
-      <div class="next-label">NEXT LECTURE</div>
-      <div class="next-content">
-        <div id="nextTopic" class="next-topic">—</div>
-        <div id="nextTime"  class="next-time">—</div>
-        <div id="nextFaculty" class="next-faculty">—</div>
+    <!-- ── NEXT LECTURE BOX ── -->
+    <footer class="footer">
+      <div id="nextLectureBox" class="next-lecture-box">
+        <div class="next-label">NEXT LECTURE</div>
+        <div class="next-content">
+          <div id="nextTopic" class="next-topic">—</div>
+          <div id="nextTime" class="next-time">—</div>
+          <div id="nextFaculty" class="next-faculty">—</div>
+        </div>
       </div>
-    </div>
 
-    <div class="footer-note">
-      Timeline auto-scrolls to the current time. Blocks show today's lectures only.
-    </div>
-  </footer>
+      <div class="footer-note">
+        Timeline auto-scrolls to the current time. Blocks show today's lectures
+        only.
+      </div>
+    </footer>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
