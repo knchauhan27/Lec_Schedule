@@ -1,0 +1,72 @@
+[
+  {
+    "date": "2026-03-10",
+    "start": "08:00",
+    "end": "09:00",
+    "topic": "Embryology of the Heart",
+    "faculty": "Dr. Mehta"
+  },
+  {
+    "date": "2026-03-10",
+    "start": "09:15",
+    "end": "10:15",
+    "topic": "Cardiac Cycle & Physiology",
+    "faculty": "Dr. Raghavan"
+  },
+  {
+    "date": "2026-03-10",
+    "start": "10:30",
+    "end": "11:30",
+    "topic": "Hypertension Management",
+    "faculty": "Dr. Sharma"
+  },
+  {
+    "date": "2026-03-10",
+    "start": "11:45",
+    "end": "12:45",
+    "topic": "Malpresentation in Obstetrics",
+    "faculty": "Dr. Vaishali"
+  },
+  {
+    "date": "2026-03-10",
+    "start": "13:45",
+    "end": "14:45",
+    "topic": "PCOS — Diagnosis & Treatment",
+    "faculty": "Dr. Anjali"
+  },
+  {
+    "date": "2026-03-10",
+    "start": "15:00",
+    "end": "16:00",
+    "topic": "Renal Pharmacology",
+    "faculty": "Dr. Krishnan"
+  },
+  {
+    "date": "2026-03-10",
+    "start": "16:15",
+    "end": "17:15",
+    "topic": "Pathology of Liver Disease",
+    "faculty": "Dr. Iyer"
+  },
+  {
+    "date": "2026-03-10",
+    "start": "17:30",
+    "end": "18:30",
+    "topic": "Community Medicine — Epidemiology",
+    "faculty": "Dr. Nair"
+  },
+  {
+    "date": "2026-02-17",
+    "start": "12:00",
+    "end": "13:00",
+    "topic": "Malpresentation",
+    "faculty": "Dr. Vaishali"
+  },
+  {
+    "date": "2026-02-17",
+    "start": "14:00",
+    "end": "15:00",
+    "topic": "PCOS",
+    "faculty": "Dr. Anjali"
+  }
+]
