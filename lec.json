@@ -1,14 +1,6 @@
 [
   {
     "date": "2026-03-10",
-    "start": "9:00",
-    "end": "12:00",
-    "subject": "Clinical Posting",
-    "topic ": "Hello World",
-    "faculty": "Dr ABC"
-  },
-  {
-    "date": "2026-03-10",
     "start": "12:00",
     "end": "13:00",
     "subject": "Medicine",
