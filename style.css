@@ -5,32 +5,39 @@
 
 /* ── CSS VARIABLES ── */
 :root {
-  --bg:          #0b0e14;
-  --surface:     #111620;
-  --surface2:    #171d2b;
-  --border:      #1e2840;
-  --accent:      #00d4ff;
-  --accent-dim:  rgba(0, 212, 255, 0.12);
-  --red:         #ff3b5c;
-  --red-glow:    rgba(255, 59, 92, 0.35);
-  --gold:        #f5c542;
+  --bg: #0b0e14;
+  --surface: #111620;
+  --surface2: #171d2b;
+  --border: #1e2840;
+  --accent: #00d4ff;
+  --accent-dim: rgba(0, 212, 255, 0.12);
+  --red: #ff3b5c;
+  --red-glow: rgba(255, 59, 92, 0.35);
+  --gold: #f5c542;
   --text-primary: #e8edf5;
-  --text-muted:   #5a6a8a;
-  --text-dim:     #3a4a6a;
-  --font-display: 'Syne', sans-serif;
-  --font-body:    'DM Sans', sans-serif;
-  --font-mono:    'DM Mono', monospace;
+  --text-muted: #5a6a8a;
+  --text-dim: #3a4a6a;
+  --font-display: "Syne", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-mono: "DM Mono", monospace;
 
   /* Timeline geometry */
   --track-height: 180px;
-  --axis-y:       130px; /* px from top of track where axis sits */
-  --block-bottom: 20px;  /* gap between block bottom and axis */
+  --axis-y: 130px; /* px from top of track where axis sits */
+  --block-bottom: 20px; /* gap between block bottom and axis */
 }
 
 /* ── RESET ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html, body {
+html,
+body {
   height: 100%;
   background: var(--bg);
   color: var(--text-primary);
@@ -41,12 +48,12 @@ html, body {
 
 /* Subtle grid texture on body */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.015) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
   z-index: 0;
@@ -105,7 +112,7 @@ body::before {
   font-weight: 500;
   letter-spacing: 0.06em;
   color: var(--accent);
-  text-shadow: 0 0 24px rgba(0,212,255,.45);
+  text-shadow: 0 0 24px rgba(0, 212, 255, 0.45);
   line-height: 1;
 }
 
@@ -141,9 +148,15 @@ body::before {
 }
 
 @keyframes pulse {
-  0%   { box-shadow: 0 0 0 0    var(--red-glow); }
-  50%  { box-shadow: 0 0 0 8px  rgba(255,59,92,0); }
-  100% { box-shadow: 0 0 0 0    rgba(255,59,92,0); }
+  0% {
+    box-shadow: 0 0 0 0 var(--red-glow);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 59, 92, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 59, 92, 0);
+  }
 }
 
 /* ── TIMELINE SECTION ── */
@@ -238,7 +251,13 @@ body::before {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, var(--border) 5%, var(--border) 95%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border) 5%,
+    var(--border) 95%,
+    transparent 100%
+  );
 }
 
 /* ── LECTURE BLOCKS ── */
@@ -262,12 +281,14 @@ body::before {
   pointer-events: all;
   cursor: default;
   overflow: hidden;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
   min-width: 90px;
 }
 
 .lecture-block::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, var(--accent-dim) 0%, transparent 60%);
@@ -276,8 +297,8 @@ body::before {
 
 .lecture-block:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,212,255,.18);
-  border-color: rgba(0,212,255,.4);
+  box-shadow: 0 8px 24px rgba(0, 212, 255, 0.18);
+  border-color: rgba(0, 212, 255, 0.4);
   z-index: 20;
 }
 
@@ -286,6 +307,16 @@ body::before {
   font-weight: 700;
   font-size: 12px;
   color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+.block-subject {
+  font-family: var(--font-body);
+  font-size: 10px;
+  color: var(--text-muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -322,12 +353,16 @@ body::before {
 /* Active (ongoing) lecture gets a gold highlight */
 .lecture-block.active {
   border-top-color: var(--gold);
-  border-color: rgba(245,197,66,.25);
+  border-color: rgba(245, 197, 66, 0.25);
   background: #1a1a0e;
 }
 
 .lecture-block.active::before {
-  background: linear-gradient(135deg, rgba(245,197,66,.08) 0%, transparent 60%);
+  background: linear-gradient(
+    135deg,
+    rgba(245, 197, 66, 0.08) 0%,
+    transparent 60%
+  );
 }
 
 .lecture-block.active .block-time {
@@ -351,7 +386,9 @@ body::before {
   height: 10px;
   border-radius: 50%;
   background: var(--red);
-  box-shadow: 0 0 10px var(--red-glow), 0 0 20px var(--red-glow);
+  box-shadow:
+    0 0 10px var(--red-glow),
+    0 0 20px var(--red-glow);
   flex-shrink: 0;
   margin-top: 2px;
 }
